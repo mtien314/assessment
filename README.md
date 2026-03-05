@@ -177,3 +177,6 @@ npm run dev
 - react-pdf - PDF rendering
 - Vite - Build tool
 - CSS for styling (no heavy framework)
+
+### Demo
+![Demo](demo.gif)
