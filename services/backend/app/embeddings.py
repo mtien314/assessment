@@ -1,5 +1,4 @@
 import numpy as np
-import faiss
 from sentence_transformers import SentenceTransformer
 from typing import List, Dict, Tuple, Optional
 from .models import TextChunk, RelatedMatch, BoundingBox
@@ -25,7 +24,6 @@ class PDFIndex:
         self.pdf_id = pdf_id
         self.chunks = chunks
         self.embeddings: Optional[np.ndarray] = None
-        self.index: Optional[faiss.IndexFlatIP] = None
         self.qdrant_client = QdrantClient(url=QDRANT_URL, api_key=QRANT_API_KEY)
     
     
