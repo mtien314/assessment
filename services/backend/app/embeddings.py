@@ -23,7 +23,6 @@ class PDFIndex:
     def __init__(self, pdf_id: str, chunks: List[TextChunk]):
         self.pdf_id = pdf_id
         self.chunks = chunks
-        self.embeddings: Optional[np.ndarray] = None
         self.qdrant_client = QdrantClient(url=QDRANT_URL, api_key=QRANT_API_KEY)
     
     
@@ -31,10 +30,6 @@ class PDFIndex:
         logger.info("Building index for PDF")
         if not self.chunks:
             return
-        
-        # model = get_model()
-        texts = [chunk.text for chunk in self.chunks]
-        self.embeddings = model.encode(texts, convert_to_numpy=True, normalize_embeddings=True)
         
         collections_name = [collection.name for collection in self.qdrant_client.get_collections().collections]
         if "temp" in collections_name:
