@@ -137,6 +137,10 @@ Find semantically related text passages.
 
 ## Setup Instructions
 
+```bash 
+Create account in QDRANT to get QDRANT_URL and QDRANT_API_KEY
+```
+
 ### Backend
 ```bash
 cd backend
