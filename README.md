@@ -20,8 +20,8 @@ A full-stack PDF viewer with AI-powered semantic search. Users can highlight tex
 ┌─────────────────────────────────────────────────────────────────┐
 │                      Backend (FastAPI)                          │
 │  ┌─────────────┐  ┌─────────────────┐  ┌─────────────────────┐ │
-│  │ PDF Parser  │  │  Embeddings     │  │  Vector Search      │ │
-│  │ (PyMuPDF)   │  │  (sentence-     │  │  (FAISS)            │ │
+│  │ PDF Parser  │  │  Embeddings     │  │  Vector DB      │ │
+│  │ (PyMuPDF)   │  │  (sentence-     │  │  (QDRANT)            │ │
 │  │             │  │   transformers) │  │                     │ │
 │  └─────────────┘  └─────────────────┘  └─────────────────────┘ │
 └─────────────────────────────────────────────────────────────────┘
@@ -33,7 +33,7 @@ A full-stack PDF viewer with AI-powered semantic search. Users can highlight tex
 
 **Strategy**: Hybrid approach combining:
 1. **Sentence Transformers** (`all-MiniLM-L6-v2`) for generating embeddings
-2. **FAISS** for efficient similarity search
+2. **QDRANT** for efficient similarity search
 3. **Chunking** with overlap for better context preservation
 
 **Why This Approach**:
@@ -159,7 +159,7 @@ npm run dev
 ```
 
 ## Performance
-- PDF processing: ~2-3 seconds for 50 pages
+- PDF processing: ~2-20 seconds for 50 pages
 - Semantic search: <500ms after initial embedding
 - Embeddings are cached per PDF to avoid recomputation
 
@@ -169,7 +169,7 @@ npm run dev
 - FastAPI + Uvicorn
 - PyMuPDF (fitz) - PDF parsing with position data
 - sentence-transformers - Local embedding model
-- faiss-cpu - Vector similarity search
+- QDRANT - Vector database
 - python-multipart - File uploads
 
 ### Frontend
