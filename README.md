@@ -20,8 +20,8 @@ A full-stack PDF viewer with AI-powered semantic search. Users can highlight tex
 ┌─────────────────────────────────────────────────────────────────┐
 │                      Backend (FastAPI)                          │
 │  ┌─────────────┐  ┌─────────────────┐  ┌─────────────────────┐ │
-│  │ PDF Parser  │  │  Embeddings     │  │  Vector DB      │ │
-│  │ (PyMuPDF)   │  │  (sentence-     │  │  (QDRANT)            │ │
+│  │ PDF Parser  │  │  Embeddings     │  │  Vector DB          │ │
+│  │ (PyMuPDF)   │  │  (sentence-     │  │  (QDRANT)           │ │
 │  │             │  │   transformers) │  │                     │ │
 │  └─────────────┘  └─────────────────┘  └─────────────────────┘ │
 └─────────────────────────────────────────────────────────────────┘
