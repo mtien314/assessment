@@ -143,7 +143,8 @@ Create account in QDRANT to get QDRANT_URL and QDRANT_API_KEY
 
 ### Backend
 ```bash
-cd backend
+cd services/backend
+cp .env.example .env
 python -m venv venv
 source venv/bin/activate  # or `venv\Scripts\activate` on Windows
 pip install -r requirements.txt
@@ -152,7 +153,7 @@ uvicorn app.main:app --reload --port 8000
 
 ### Frontend
 ```bash
-cd frontend
+cd services/frontend
 npm install
 npm run dev
 ```
